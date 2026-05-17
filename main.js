@@ -110,7 +110,7 @@ const menuItems = [
     name: { en: 'Paal Bun', ta: 'பால் பன்' },
     price: 15,
     category: 'bun',
-    image: '/images/paal_bun.png'
+    image: '/images/paal_bun.jpg'
   }
 ];
 
