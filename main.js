@@ -36,7 +36,7 @@ const translations = {
     custPhonePlaceholder: "Your Phone Number",
     custAddressPlaceholder: "Complete Delivery Address",
     missingDetailsAlert: "Please fill in all delivery details!",
-    storyTitle: "Our Story",
+    storyTitle: "Our Kutty Story",
     storySubtitle: "Authentic Taste Since 2005",
     storyDesc: "Ramesh's Poli & Sweets started with a simple mission: to serve the most authentic, home-style Polis to our community. For over 20+ years, we have been using <span class='highlight-text'>traditional recipes</span> and the finest ingredients to bring you the taste of home, served hot and fresh every single day.",
   },
@@ -96,7 +96,7 @@ const menuItems = [
     name: { en: 'Coconut Poli', ta: 'தேங்காய் போலி' },
     price: 15,
     category: 'poli',
-    image: '/images/hero.png'
+    image: '/images/coconut_poli.png'
   },
   {
     id: 'kara-poli',
@@ -255,7 +255,7 @@ function renderLanguage() {
   // Story Section
   // story-title handled above
   document.getElementById('story-subtitle').textContent = t.storySubtitle;
-  document.getElementById('story-desc').textContent = t.storyDesc;
+  document.getElementById('story-desc').innerHTML = t.storyDesc;
 
   // New Checkout Fields
   document.getElementById('checkout-details-title').textContent = t.checkoutDetailsTitle;

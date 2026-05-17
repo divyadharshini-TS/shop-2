@@ -861,7 +861,7 @@ footer {
 
 .story-images {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 15px;
 }
 
@@ -870,7 +870,7 @@ footer {
   overflow: hidden;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  height: 250px;
+  height: 400px;
 }
 
 .story-image-wrapper img {
@@ -1071,4 +1071,14 @@ html, body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor, .custom-cursor-follower {
+    display: none !important;
+  }
+  body, a, button, input, textarea, select {
+    cursor: auto !important;
+  }
 }
