@@ -1082,3 +1082,17 @@ html, body {
     cursor: auto !important;
   }
 }
+
+body.mobile-device, 
+body.mobile-device a, 
+body.mobile-device button, 
+body.mobile-device input, 
+body.mobile-device textarea, 
+body.mobile-device select {
+  cursor: auto !important;
+}
+
+body.mobile-device .custom-cursor,
+body.mobile-device .custom-cursor-follower {
+  display: none !important;
+}

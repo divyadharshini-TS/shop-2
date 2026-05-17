@@ -168,7 +168,13 @@ function setupAdvancedInteractions() {
   const cursor = document.querySelector('.custom-cursor');
   const follower = document.querySelector('.custom-cursor-follower');
   
-  if (cursor && follower) {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 768;
+  
+  if (isTouchDevice) {
+    if (cursor) cursor.style.display = 'none';
+    if (follower) follower.style.display = 'none';
+    document.body.classList.add('mobile-device');
+  } else if (cursor && follower) {
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let followerX = window.innerWidth / 2;
