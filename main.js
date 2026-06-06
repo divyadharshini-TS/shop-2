@@ -50,10 +50,10 @@ const dict = {
 let currentLang = localStorage.getItem('poli-lang') || 'en';
 let currentTheme = localStorage.getItem('poli-theme') || 'light';
 const menuItems = [
-  { id: 'paruppu-poli', name: 'Paruppu Poli', price: 15, category: 'poli', image: '/images/hero.png', desc: 'Traditional sweet poli made with chana dal filling, jaggery and aromatic spices. Served hot off the griddle.' },
-  { id: 'coconut-poli', name: 'Coconut Poli', price: 15, category: 'poli', image: '/images/coconut_poli.png', desc: 'Delicious poli stuffed with freshly grated coconut and palm jaggery. A South Indian classic.' },
-  { id: 'kara-poli', name: 'Kara Poli', price: 15, category: 'kara', image: '/images/kara_poli.png', desc: 'Spicy poli with a savory filling of seasoned potatoes and onions. Perfect for those who love a kick.' },
-  { id: 'paal-bun', name: 'Paal Bun', price: 15, category: 'bun', image: '/images/paal_bun.jpg', desc: 'Soft, fluffy bun soaked in sweetened milk. A beloved evening treat for all ages.' }
+  { id: 'paruppu-poli', name: 'Paruppu Poli', price: 15, category: 'poli', image: './images/hero.png', desc: 'Traditional sweet poli made with chana dal filling, jaggery and aromatic spices. Served hot off the griddle.' },
+  { id: 'coconut-poli', name: 'Coconut Poli', price: 15, category: 'poli', image: './images/coconut_poli.png', desc: 'Delicious poli stuffed with freshly grated coconut and palm jaggery. A South Indian classic.' },
+  { id: 'kara-poli', name: 'Kara Poli', price: 15, category: 'kara', image: './images/kara_poli.png', desc: 'Spicy poli with a savory filling of seasoned potatoes and onions. Perfect for those who love a kick.' },
+  { id: 'paal-bun', name: 'Paal Bun', price: 15, category: 'bun', image: './images/paal_bun.jpg', desc: 'Soft, fluffy bun soaked in sweetened milk. A beloved evening treat for all ages.' }
 ];
 
 const reviews = [
