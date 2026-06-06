@@ -1,553 +1,430 @@
-const translations = {
+const dict = {
   en: {
-    heroTitle: "Ramesh's Poli & Sweets",
-    heroSubtitle: "Authentic Taste, Served Hot Since 2005",
-    badgeFresh: "Freshly Made Daily",
-    badgeHot: "Hot & Soft Served",
-    btnOrderNow: "Order Now",
-    btnCallNow: "📞 Call to Order",
-    menuTitle: "Evening Specials",
-    menuTime: "Available 6:00 PM - 9:45 PM",
-    cartTitle: "Your Order",
-    totalLabel: "Total:",
-    btnCheckout: "Order via WhatsApp",
-    footerText: "© 2024 Ramesh's Poli & Sweets. Traditional taste since 2005.",
-    addToCart: "Add to Cart",
-    emptyCart: "Your cart is empty",
-    whatsappMsg: "Hello! I would like to place an order:",
-    offerText: "🔥 Offer: Buy above ₹150 and get one Paal Bun or Poli FREE!",
-    offerNote: "*Offers may change daily based on availability.",
-    deliveryTitle: "Delivery Conditions",
-    deliveryDesc: "Min Order: ₹60 | Nearby 1km: ₹20 charge | ₹20 per extra km",
-    catchyLine1: "🥞 The Taste of Tradition in Every Bite!",
-    catchyLine2: "♨️ Served Hot, Fresh & Straight from the Griddle!",
-    catchyLine3: "✨ Evening Bliss Starts with Ramesh's Poli!",
-    bulkTitle: "Bulk Orders & Functions",
-    bulkDesc: "Pre-book for functions, parties, and special occasions. Contact us for special pricing!",
-    btnBulkEnquiry: "Enquire via WhatsApp",
-    reviewsTitle: "Customer Reviews",
-    feedbackTitle: "Share Your Experience",
-    btnSubmitFb: "Submit Review",
-    minOrderAlert: "Minimum order for delivery is ₹60",
-    offerApplied: "Free item added to your order!",
-    deliveryChargeLabel: "Delivery Charge:",
-    checkoutDetailsTitle: "Delivery Details",
-    custNamePlaceholder: "Your Full Name",
-    custPhonePlaceholder: "Your Phone Number",
-    custAddressPlaceholder: "Complete Delivery Address",
-    missingDetailsAlert: "Please fill in all delivery details!",
-    storyTitle: "Our Kutty Story",
-    storySubtitle: "Authentic Taste Since 2005",
-    storyDesc: "Ramesh's Poli & Sweets started with a simple mission: to serve the most authentic, home-style Polis to our community. For over 20+ years, we have been using <span class='highlight-text'>traditional recipes</span> and the finest ingredients to bring you the taste of home, served hot and fresh every single day.",
+    logo: 'Ramesh\'s <span>Poli</span>',
+    hero_title: 'Authentic Taste,<br>Served Hot Since <span class="highlight">2005</span>',
+    hero_subtitle: 'Freshly made every evening — order now!',
+    explore_menu: 'Explore Menu',
+    categories: 'Categories',
+    cat_all: 'All', cat_poli: 'Poli', cat_kara: 'Kara', cat_bun: 'Bun',
+    delivery_info: '🛵 Delivery Info',
+    delivery_desc: 'Min ₹60 | 1km: ₹20 | +₹20 per extra km',
+    delivery_time: 'Available 6:00 PM – 9:45 PM',
+    bulk_orders: '🎉 Bulk Orders & Functions',
+    bulk_desc: 'Pre-book for parties & occasions!',
+    enquire_wa: 'Enquire on WhatsApp',
+    story_title: 'Our Kutty Story',
+    story_p1: "Started in 2005 as a small pushcart in Nanganallur, Ramesh's Poli has grown through sheer love and word-of-mouth. Our mission has always been simple: serve hot, fresh, and hygienic traditional snacks.",
+    story_p2: "Every evening, the aroma of roasting ghee and jaggery brings our neighborhood together. Thank you for being part of our journey for nearly two decades!",
+    reviews_title: 'Customer Reviews',
+    write_review: 'Write a Review',
+    submit_review: 'Submit Review',
+    chef_msg1: 'Click me!',
+    chef_msg2: 'Party Time!',
+    err_req: 'Required field'
   },
   ta: {
-    heroTitle: "ரமேஷ்'ஸ் அசல் போலி & இனிப்புகள்",
-    heroSubtitle: "2005 முதல் சுவையான பாரம்பரிய தயாரிப்பு",
-    badgeFresh: "தினமும் புதுத் தயாரிப்பு",
-    badgeHot: "சூடாகவும் மென்மையாகவும்",
-    btnOrderNow: "இப்போதே ஆர்டர் செய்யுங்கள்",
-    btnCallNow: "📞 போன் மூலம் ஆர்டர் செய்க",
-    menuTitle: "மாலை நேர சிறப்பு உணவுகள்",
-    menuTime: "மாலை 6:00 - இரவு 9:45 வரை",
-    cartTitle: "உங்கள் ஆர்டர்",
-    totalLabel: "மொத்தம்:",
-    btnCheckout: "வாட்ஸ்அப் மூலம் ஆர்டர் செய்க",
-    footerText: "© 2024 ரமேஷ்'ஸ் போலி & இனிப்புகள். 2005 முதல் பாரம்பரிய சுவை.",
-    addToCart: "சேர்க்கவும்",
-    emptyCart: "உங்கள் கூடை காலியாக உள்ளது",
-    whatsappMsg: "வணக்கம்! நான் ஒரு ஆர்டர் செய்ய விரும்புகிறேன்:",
-    offerText: "🔥 சலுகை: ₹150-க்கு மேல் வாங்கினால் ஒரு பால் பன் அல்லது போலி இலவசம்!",
-    offerNote: "*சலுகைகள் அன்றைய இருப்பைப் பொறுத்து மாறக்கூடும்.",
-    deliveryTitle: "டெலிவரி நிபந்தனைகள்",
-    deliveryDesc: "குறைந்தபட்ச ஆர்டர்: ₹60 | 1 கிமீ வரை: ₹20 கட்டணம் | கூடுதல் கிமீ-க்கு ₹20",
-    catchyLine1: "🥞 ஒவ்வொரு கடியிலும் பாரம்பரியத்தின் சுவை!",
-    catchyLine2: "♨️ சூடாகவும், புதியதாகவும், நேரடியாக உங்களுக்காக!",
-    catchyLine3: "✨ மாலையை அழகாக்க ரமேஷ்'ஸ் போலி!",
-    bulkTitle: "மொத்த ஆர்டர்கள் & விசேஷங்கள்",
-    bulkDesc: "விசேஷங்கள், பார்ட்டிகள் மற்றும் சிறப்பு நிகழ்வுகளுக்கு முன்கூட்டியே பதிவு செய்யுங்கள்!",
-    btnBulkEnquiry: "வாட்ஸ்அப்பில் விசாரிக்கவும்",
-    reviewsTitle: "வாடிக்கையாளர் கருத்துக்கள்",
-    feedbackTitle: "உங்கள் அனுபவத்தைப் பகிருங்கள்",
-    btnSubmitFb: "கருத்தை சமர்ப்பிக்கவும்",
-    minOrderAlert: "டெலிவரிக்கு குறைந்தபட்ச ஆர்டர் ₹60 இருக்க வேண்டும்",
-    offerApplied: "இலவச பொருள் உங்கள் ஆர்டரில் சேர்க்கப்பட்டது!",
-    deliveryChargeLabel: "டெலிவரி கட்டணம்:",
-    checkoutDetailsTitle: "டெலிவரி விவரங்கள்",
-    custNamePlaceholder: "உங்கள் முழு பெயர்",
-    custPhonePlaceholder: "உங்கள் போன் எண்",
-    custAddressPlaceholder: "முழு டெலிவரி முகவரி",
-    missingDetailsAlert: "தயவுசெய்து அனைத்து டெலிவரி விவரங்களையும் நிரப்பவும்!",
-    storyTitle: "எங்கள் கதை",
-    storySubtitle: "2005 முதல் அசல் சுவை",
-    storyDesc: "ரமேஷ்'ஸ் போலி & ஸ்வீட்ஸ் ஒரு எளிய நோக்கத்துடன் தொடங்கியது: எங்கள் சமூகத்திற்கு மிகவும் உண்மையான, வீட்டு முறை போலிகளை வழங்குவது. 20+ ஆண்டுகளுக்கும் மேலாக, <span class='highlight-text'>பாரம்பரிய சமையல் குறிப்புகள்</span> மற்றும் சிறந்த பொருட்களைப் பயன்படுத்தி, ஒவ்வொரு நாளும் சூடாகவும் புதியதாகவும் வீட்டு சுவையை உங்களுக்கு வழங்குகிறோம்.",
+    logo: 'ரமேஷ் <span>போளி</span>',
+    hero_title: 'அசலான சுவை,<br><span class="highlight">2005</span> முதல் சுடச்சுட',
+    hero_subtitle: 'தினமும் மாலையில் புதிதாக செய்யப்படுகிறது — இப்போதே ஆர்டர் செய்யுங்கள்!',
+    explore_menu: 'மெனுவை பார்க்க',
+    categories: 'வகைகள்',
+    cat_all: 'அனைத்தும்', cat_poli: 'போளி', cat_kara: 'காரா', cat_bun: 'பன்',
+    delivery_info: '🛵 டெலிவரி விவரங்கள்',
+    delivery_desc: 'குறைந்தபட்சம் ₹60 | 1 கி.மீ: ₹20 | +₹20 கூடுதல் கி.மீ-க்கு',
+    delivery_time: 'கிடைக்கும் நேரம் 6:00 PM – 9:45 PM',
+    bulk_orders: '🎉 விசேஷ ஆர்டர்கள்',
+    bulk_desc: 'பண்டிகைகள் மற்றும் விழாக்களுக்கு முன்கூட்டியே ஆர்டர் செய்யலாம்!',
+    enquire_wa: 'வாட்ஸ்அப்பில் விசாரிக்க',
+    story_title: 'எங்கள் குட்டி கதை',
+    story_p1: "2005 இல் நங்கநல்லூரில் ஒரு சிறிய தள்ளுவண்டியில் தொடங்கப்பட்ட ரமேஷ் போளி, உங்கள் அன்பால் வளர்ந்துள்ளது. சுடச்சுட, சுத்தமான பாரம்பரிய சிற்றுண்டிகளை வழங்குவதே எங்கள் நோக்கம்.",
+    story_p2: "ஒவ்வொரு மாலையும், நெய் மற்றும் வெல்லத்தின் நறுமணம் நம்மை ஒன்றிணைக்கிறது. கிட்டத்தட்ட இரண்டு தசாப்தங்களாக எங்கள் பயணத்தில் இருப்பதற்கு நன்றி!",
+    reviews_title: 'வாடிக்கையாளர் மதிப்புரைகள்',
+    write_review: 'மதிப்புரை எழுத',
+    submit_review: 'மதிப்புரை சமர்ப்பிக்க',
+    chef_msg1: 'என்னை அழுத்தவும்!',
+    chef_msg2: 'பார்ட்டி நேரம்!',
+    err_req: 'கட்டாயம் தேவை'
   }
 };
 
+let currentLang = localStorage.getItem('poli-lang') || 'en';
+let currentTheme = localStorage.getItem('poli-theme') || 'light';
 const menuItems = [
-  {
-    id: 'paruppu-poli',
-    name: { en: 'Paruppu Poli', ta: 'பருப்பு போலி' },
-    price: 15,
-    category: 'poli',
-    image: '/images/hero.png'
-  },
-  {
-    id: 'coconut-poli',
-    name: { en: 'Coconut Poli', ta: 'தேங்காய் போலி' },
-    price: 15,
-    category: 'poli',
-    image: '/images/coconut_poli.png'
-  },
-  {
-    id: 'kara-poli',
-    name: { en: 'Potato & Onion Kara Poli', ta: 'கார போலி' },
-    price: 15,
-    category: 'kara',
-    image: '/images/kara_poli.png'
-  },
-  {
-    id: 'paal-bun',
-    name: { en: 'Paal Bun', ta: 'பால் பன்' },
-    price: 15,
-    category: 'bun',
-    image: '/images/paal_bun.jpg'
-  }
+  { id: 'paruppu-poli', name: 'Paruppu Poli', price: 15, category: 'poli', image: '/images/hero.png', desc: 'Traditional sweet poli made with chana dal filling, jaggery and aromatic spices. Served hot off the griddle.' },
+  { id: 'coconut-poli', name: 'Coconut Poli', price: 15, category: 'poli', image: '/images/coconut_poli.png', desc: 'Delicious poli stuffed with freshly grated coconut and palm jaggery. A South Indian classic.' },
+  { id: 'kara-poli', name: 'Kara Poli', price: 15, category: 'kara', image: '/images/kara_poli.png', desc: 'Spicy poli with a savory filling of seasoned potatoes and onions. Perfect for those who love a kick.' },
+  { id: 'paal-bun', name: 'Paal Bun', price: 15, category: 'bun', image: '/images/paal_bun.jpg', desc: 'Soft, fluffy bun soaked in sweetened milk. A beloved evening treat for all ages.' }
 ];
 
-let currentLang = 'en';
-let cart = [];
-let reviews = [
-  { name: 'Karthik', comment: 'The hot poli is just amazing! Tastes exactly like home. Highly recommended for everyone looking for authentic taste.', rating: 5 },
-  { name: 'Priya', comment: 'Best evening snacks in the area. Paal bun is so soft and delicious. The coconut poli is also a must-try!', rating: 5 },
-  { name: 'Suresh', comment: 'Authentic taste and fresh quality. I order from here every weekend.', rating: 4 },
+const reviews = [
+  { name: 'Karthik', comment: 'The hot poli is just amazing! Tastes exactly like home.', rating: 5 },
+  { name: 'Priya', comment: 'Best evening snacks in the area. Paal bun is so soft!', rating: 5 },
+  { name: 'Suresh', comment: 'Authentic taste and fresh quality. I order every weekend.', rating: 4 },
   { name: 'Meena', comment: 'The Kara poli is spicy and perfect. Great service!', rating: 5 },
-  { name: 'Rahul', comment: 'Reminds me of my grandmother\'s cooking. Thank you for keeping the tradition alive.', rating: 5 }
+  { name: 'Rahul', comment: 'Reminds me of my grandmother\'s cooking. Thank you!', rating: 5 }
 ];
 
-// Initialize
+let cart = [];
+let activeCategory = 'all';
+
+// ===== INIT =====
 function init() {
-  renderLanguage();
+  applyTheme(currentTheme);
+  setLanguage(currentLang);
   renderMenu();
   renderReviews();
   setupEventListeners();
-  loadTheme();
-  setupScrollReveal();
-  setupAdvancedInteractions();
+  initAnimations();
 }
 
-// Scroll Reveal Observer
-let observer;
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('poli-theme', theme);
+  document.getElementById('theme-toggle').textContent = theme === 'light' ? '🌓' : '☀️';
+}
 
-function setupScrollReveal() {
-  const revealOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  };
+function setLanguage(lang) {
+  localStorage.setItem('poli-lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[lang][key]) el.innerHTML = dict[lang][key];
+  });
+  document.getElementById('lang-toggle').textContent = lang === 'en' ? '🌐' : 'A/அ';
+}
 
-  observer = new IntersectionObserver((entries) => {
+function initAnimations() {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
         observer.unobserve(entry.target);
       }
     });
-  }, revealOptions);
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  observeElements();
-}
-
-function observeElements() {
-  if (!observer) return;
-  const reveals = document.querySelectorAll('.reveal:not(.active)');
-  reveals.forEach(el => observer.observe(el));
-}
-
-// Advanced Interactions (Cursor, Magnetic Buttons, Parallax)
-function setupAdvancedInteractions() {
-  // 1. Custom Cursor
-  const cursor = document.querySelector('.custom-cursor');
-  const follower = document.querySelector('.custom-cursor-follower');
-  
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 768;
-  
-  if (isTouchDevice) {
-    if (cursor) cursor.style.display = 'none';
-    if (follower) follower.style.display = 'none';
-    document.body.classList.add('mobile-device');
-  } else if (cursor && follower) {
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let followerX = window.innerWidth / 2;
-    let followerY = window.innerHeight / 2;
-    
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
-    });
-    
-    function renderCursor() {
-      followerX += (mouseX - followerX) * 0.15;
-      followerY += (mouseY - followerY) * 0.15;
-      follower.style.transform = `translate(calc(${followerX}px - 50%), calc(${followerY}px - 50%))`;
-      requestAnimationFrame(renderCursor);
-    }
-    renderCursor();
-    
-    // Dynamic Hover handling for Cursor
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest('a, button, .menu-card, input, select, textarea, .story-image-wrapper, .whatsapp-float')) {
-        cursor.classList.add('hovering');
-        follower.classList.add('hovering');
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('a, button, .menu-card, input, select, textarea, .story-image-wrapper, .whatsapp-float')) {
-        cursor.classList.remove('hovering');
-        follower.classList.remove('hovering');
-      }
-    });
+  // Hero chef dramatic entrance - bounces in from the right after 500ms
+  const heroChef = document.querySelector('.hero-chef');
+  if (heroChef) {
+    heroChef.style.opacity = '0';
+    setTimeout(() => {
+      heroChef.style.opacity = '1';
+      heroChef.classList.add('just-entered');
+      heroChef.addEventListener('animationend', () => {
+        heroChef.classList.remove('just-entered');
+      }, { once: true });
+    }, 500);
   }
-
-  // 2. Magnetic Buttons
-  const magneticButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
-  magneticButtons.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-  });
-
-  // 3. Parallax Hero Content
-  const heroContent = document.querySelector('.hero-content');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY < window.innerHeight && heroContent) {
-      heroContent.style.transform = `translateY(${scrollY * 0.4}px)`;
-      heroContent.style.opacity = 1 - (scrollY / window.innerHeight) * 1.5;
-    }
-  });
 }
 
-function renderLanguage() {
-  const t = translations[currentLang];
-  // Branding Titles remain bilingual and stable
-  // Subtitles and labels update as usual
-  document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
-  document.getElementById('badge-fresh').textContent = t.badgeFresh;
-  document.getElementById('badge-hot').textContent = t.badgeHot;
-  document.getElementById('btn-order-now').textContent = t.btnOrderNow;
-  document.getElementById('offer-text').innerHTML = `${t.offerText} <br><small style="font-size: 0.8rem; font-weight: 400; opacity: 0.9;">${t.offerNote}</small>`;
-  document.getElementById('menu-title').textContent = t.menuTitle;
-  document.getElementById('menu-time').innerHTML = `<span>${t.menuTime}</span><br><p class="catchy-tagline">${t.catchyLine1}</p>`;
-  document.getElementById('delivery-title').textContent = t.deliveryTitle;
-  document.getElementById('delivery-desc').textContent = t.deliveryDesc;
-  document.getElementById('bulk-title').textContent = t.bulkTitle;
-  document.getElementById('bulk-desc').textContent = t.bulkDesc;
-  document.getElementById('btn-bulk-enquiry').textContent = t.btnBulkEnquiry;
-  document.getElementById('reviews-title').textContent = t.reviewsTitle;
-  document.getElementById('feedback-title').textContent = t.feedbackTitle;
-  document.getElementById('btn-submit-fb').textContent = t.btnSubmitFb;
-  document.getElementById('cart-title').textContent = t.cartTitle;
-  document.getElementById('total-label').textContent = t.totalLabel;
-  document.getElementById('btn-checkout').textContent = t.btnCheckout;
-  document.getElementById('footer-text').textContent = t.footerText;
-  
-  // Story Section
-  // story-title handled above
-  document.getElementById('story-subtitle').textContent = t.storySubtitle;
-  document.getElementById('story-desc').innerHTML = t.storyDesc;
-
-  // New Checkout Fields
-  document.getElementById('checkout-details-title').textContent = t.checkoutDetailsTitle;
-  document.getElementById('cust-name').placeholder = t.custNamePlaceholder;
-  document.getElementById('cust-phone').placeholder = t.custPhonePlaceholder;
-  document.getElementById('cust-address').placeholder = t.custAddressPlaceholder;
-
-  if (currentLang === 'ta') {
-    document.body.classList.add('tamil-active');
-  } else {
-    document.body.classList.remove('tamil-active');
-  }
-  
-  renderMenu();
-  renderCart();
-  renderReviews();
-}
-
+// ===== RENDER MENU =====
 function renderMenu() {
-  const container = document.getElementById('menu-items');
-  const t = translations[currentLang];
-  
-  container.innerHTML = menuItems.map(item => `
-    <div class="menu-card glass reveal">
-      <div class="card-image">
-        <img src="${item.image}" alt="${item.name[currentLang]}">
+  const grid = document.getElementById('menu-grid');
+  const filtered = activeCategory === 'all' ? menuItems : menuItems.filter(i => i.category === activeCategory);
+
+  grid.innerHTML = filtered.map(item => `
+    <div class="menu-card" data-id="${item.id}">
+      <div class="card-fav" data-fav="${item.id}">♡</div>
+      <div class="card-img">
+        <img src="${item.image}" alt="${item.name}" loading="lazy">
       </div>
-      <div class="card-content">
-        <h3>${item.name[currentLang]}</h3>
-        <p class="price">₹${item.price}</p>
-        <button class="btn-primary add-to-cart" data-id="${item.id}">
-          ${t.addToCart}
-        </button>
+      <div class="card-info">
+        <h4>${item.name}</h4>
+        <div class="price">₹${item.price}</div>
       </div>
     </div>
   `).join('');
-  
-  observeElements();
 }
 
+// ===== RENDER REVIEWS =====
 function renderReviews() {
   const container = document.getElementById('reviews-list');
   container.innerHTML = reviews.map(r => `
-    <div class="review-card glass reveal">
-      <div class="review-header">
+    <div class="review-card">
+      <div class="review-top">
         <span class="review-name">${r.name}</span>
         <span class="review-stars">${'⭐'.repeat(r.rating)}</span>
       </div>
-      <p class="review-comment">"${r.comment}"</p>
+      <p class="review-text">"${r.comment}"</p>
     </div>
   `).join('');
-  
-  observeElements();
 }
 
-function renderCart() {
-  const container = document.getElementById('cart-items');
-  const countLabel = document.getElementById('cart-count');
-  const totalAmountLabel = document.getElementById('total-amount');
-  const t = translations[currentLang];
+// ===== DETAIL VIEW =====
+function showDetail(id) {
+  const item = menuItems.find(i => i.id === id);
+  if (!item) return;
 
-  if (cart.length === 0) {
-    container.innerHTML = `<p class="empty-msg">${t.emptyCart}</p>`;
-    countLabel.textContent = '0';
-    totalAmountLabel.textContent = '₹0';
-    return;
-  }
-
-  container.innerHTML = cart.map(item => `
-    <div class="cart-item">
-      <div class="item-info">
-        <span>${item.name[currentLang]} x ${item.quantity}</span>
-        <span>₹${item.price * item.quantity}</span>
+  const content = document.getElementById('detail-content');
+  content.innerHTML = `
+    <div class="detail-hero">
+      <img src="${item.image}" alt="${item.name}">
+      <div class="detail-fav">♡</div>
+    </div>
+    <div class="detail-body">
+      <h2>${item.name}</h2>
+      <div class="detail-rating">
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="count">78 ratings</span>
       </div>
-      <div class="item-actions">
-        <button class="remove-item" data-id="${item.id}">-</button>
-        <button class="add-item" data-id="${item.id}">+</button>
+      <div class="detail-price">₹${item.price}</div>
+      <div class="detail-desc">
+        <h4>Description</h4>
+        <p>${item.desc}</p>
+      </div>
+      <div class="qty-row">
+        <button class="qty-btn" id="qty-minus">−</button>
+        <span class="qty-val" id="qty-val">1</span>
+        <button class="qty-btn" id="qty-plus">+</button>
+      </div>
+      <div class="detail-total">
+        <span>Total:</span>
+        <span id="detail-total-price">₹${item.price}</span>
+      </div>
+      <div class="detail-actions">
+        <button class="btn-primary full" id="btn-add-cart" data-id="${item.id}">Add to Cart</button>
       </div>
     </div>
-  `).join('');
+  `;
 
-  let subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
-  // Apply Offers
-  let offerApplied = false;
-  if (subtotal >= 150) {
-    offerApplied = true;
-    container.innerHTML += `
-      <div class="cart-item offer-item">
-        <span style="color: var(--accent); font-weight: bold;">🎁 ${t.offerApplied}</span>
-      </div>
-    `;
+  let qty = 1;
+  document.getElementById('qty-minus').onclick = () => { if (qty > 1) { qty--; updateQty(); } };
+  document.getElementById('qty-plus').onclick = () => { qty++; updateQty(); };
+  function updateQty() {
+    document.getElementById('qty-val').textContent = qty;
+    document.getElementById('detail-total-price').textContent = `₹${item.price * qty}`;
   }
 
-  const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-  countLabel.textContent = totalCount;
-  totalAmountLabel.textContent = `₹${subtotal}`;
+  document.getElementById('btn-add-cart').onclick = () => {
+    for (let i = 0; i < qty; i++) addToCart(item.id);
+    showView('home');
+  };
+
+  showView('detail');
 }
 
+// ===== VIEWS =====
+function showView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(`view-${name}`).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ===== CART =====
 function addToCart(id) {
   const item = menuItems.find(i => i.id === id);
   const existing = cart.find(i => i.id === id);
-  
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({ ...item, quantity: 1 });
-  }
-  
+  if (existing) existing.quantity++;
+  else cart.push({ ...item, quantity: 1 });
   renderCart();
-  showCart();
 }
 
 function removeFromCart(id) {
   const existing = cart.find(i => i.id === id);
-  if (existing.quantity > 1) {
-    existing.quantity--;
-  } else {
-    cart = cart.filter(i => i.id !== id);
-  }
+  if (!existing) return;
+  if (existing.quantity > 1) existing.quantity--;
+  else cart = cart.filter(i => i.id !== id);
   renderCart();
 }
 
-function showCart() {
-  document.getElementById('cart-drawer').classList.add('open');
-}
+function renderCart() {
+  const container = document.getElementById('cart-items');
+  const countEls = [document.getElementById('cart-count'), document.getElementById('cart-count-detail')];
+  const totalEl = document.getElementById('total-amount');
 
-function hideCart() {
-  document.getElementById('cart-drawer').classList.remove('open');
-}
+  const totalCount = cart.reduce((s, i) => s + i.quantity, 0);
+  countEls.forEach(el => { if (el) el.textContent = totalCount; });
 
-function syncToGoogleSheets(orderData) {
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwV-GZWw3tG6notaKpDn_VSORC4IodAlyD5luGLsaCg08et37RQdkGIpowsnsBvHTdiww/exec';
-  
-  console.log('Syncing order to Google Sheets:', orderData);
-  
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors', // Essential for Google Apps Script
-    cache: 'no-cache',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(orderData)
-  }).then(() => {
-    console.log('Order synced successfully!');
-  }).catch(err => {
-    console.error('Error syncing to Google Sheets:', err);
-  });
-}
+  // Also update fab badge if exists
+  const fabBadge = document.getElementById('cart-fab-badge');
+  if (fabBadge) fabBadge.textContent = totalCount;
 
-function sendWhatsApp() {
-  const t = translations[currentLang];
-  let subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-  if (subtotal < 60) {
-    alert(t.minOrderAlert);
+  if (cart.length === 0) {
+    container.innerHTML = '<p class="empty-msg">Your cart is empty</p>';
+    totalEl.textContent = '₹0';
     return;
   }
 
-  // Collect Customer Details
-  const name = document.getElementById('cust-name').value;
-  const phone = document.getElementById('cust-phone').value;
-  const address = document.getElementById('cust-address').value;
+  const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
 
-  if (!name || !phone || !address) {
-    alert(t.missingDetailsAlert);
-    return;
-  }
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <img class="cart-item-img" src="${item.image}" alt="${item.name}">
+      <div class="cart-item-info">
+        <h5>${item.name}</h5>
+        <span>₹${item.price} × ${item.quantity}</span>
+      </div>
+      <div class="cart-item-actions">
+        <button class="cart-minus" data-id="${item.id}">−</button>
+        <span class="cart-item-qty">${item.quantity}</span>
+        <button class="cart-plus" data-id="${item.id}">+</button>
+      </div>
+    </div>
+  `).join('');
 
-  const orderId = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-  const dateTime = new Date().toLocaleString();
-  
-  const orderData = {
-    orderId: orderId,
-    customerName: name,
-    phoneNumber: phone,
-    deliveryAddress: address,
-    orderedItems: cart.map(i => `${i.name[currentLang]} (x${i.quantity})`).join(', '),
-    totalPrice: subtotal + 20,
-    orderDateTime: dateTime,
-    status: 'Pending'
-  };
-
-  // 1. Sync to Google Sheets
-  syncToGoogleSheets(orderData);
-  
-  // 2. Format WhatsApp Message
-  let message = `*NEW ORDER: ${orderId}*\n`;
-  message += `--------------------------\n`;
-  message += `👤 *Customer:* ${name}\n`;
-  message += `📞 *Phone:* ${phone}\n`;
-  message += `📍 *Address:* ${address}\n`;
-  message += `--------------------------\n`;
-  message += `${t.whatsappMsg}\n\n`;
-  
-  cart.forEach(item => {
-    message += `• ${item.name[currentLang]} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
-  });
-  
   if (subtotal >= 150) {
-    message += `\n🎁 *Offer Applied: 1 Free Poli/Paal Bun*\n`;
+    container.innerHTML += '<div class="cart-item" style="justify-content:center;color:var(--primary);font-weight:600;">🎁 Free Poli/Paal Bun added!</div>';
   }
 
-  message += `\n*Subtotal: ₹${subtotal}*`;
-  message += `\n*Delivery Charge: ₹20*`;
-  message += `\n*Total: ₹${subtotal + 20}*`;
-  message += `\n\n_Ordered on: ${dateTime}_`;
+  totalEl.textContent = `₹${subtotal}`;
+}
+
+function openCart() {
+  document.getElementById('cart-drawer').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('open');
+}
+
+function closeCart() {
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.getElementById('cart-overlay').classList.remove('open');
+}
+
+// ===== WHATSAPP CHECKOUT =====
+function sendWhatsApp() {
+  const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+  if (subtotal < 60) { alert('Minimum order for delivery is ₹60'); return; }
+
+  const nameInput = document.getElementById('cust-name');
+  const phoneInput = document.getElementById('cust-phone');
+  const addressInput = document.getElementById('cust-address');
   
-  const encodedMsg = encodeURIComponent(message);
-  window.open(`https://wa.me/919894370660?text=${encodedMsg}`, '_blank');
-}
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const address = addressInput.value.trim();
 
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme');
-  const target = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', target);
-  localStorage.setItem('theme', target);
-  document.getElementById('theme-btn').textContent = target === 'dark' ? '☀️' : '🌙';
-}
+  // Reset errors
+  document.querySelectorAll('.input-group').forEach(g => g.classList.remove('has-error'));
+  
+  let isValid = true;
+  if (!name) { nameInput.parentElement.classList.add('has-error'); isValid = false; }
+  if (!phone) { phoneInput.parentElement.classList.add('has-error'); isValid = false; }
+  if (!address) { addressInput.parentElement.classList.add('has-error'); isValid = false; }
 
-function loadTheme() {
-  const saved = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', saved);
-  document.getElementById('theme-btn').textContent = saved === 'dark' ? '☀️' : '🌙';
-}
-
-function submitFeedback() {
-  const name = document.getElementById('fb-name').value;
-  const comment = document.getElementById('fb-comment').value;
-  const rating = parseInt(document.getElementById('fb-rating').value);
-
-  if (!name || !comment) {
-    alert('Please fill in all fields');
+  if (!isValid) {
+    document.querySelector('.has-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
-  reviews.unshift({ name, comment, rating });
-  renderReviews();
-  
-  // Scroll to top of reviews container
-  const container = document.querySelector('.reviews-container');
-  if (container) container.scrollTop = 0;
-  
-  // Clear form
-  document.getElementById('fb-name').value = '';
-  document.getElementById('fb-comment').value = '';
-  alert('Thank you for your feedback!');
+  let msg = `*NEW ORDER*\n`;
+  msg += `👤 ${name}\n📞 ${phone}\n📍 ${address}\n\n`;
+  cart.forEach(i => { msg += `• ${i.name} × ${i.quantity} = ₹${i.price * i.quantity}\n`; });
+  if (subtotal >= 150) msg += `\n🎁 Free Poli/Paal Bun\n`;
+  msg += `\n*Subtotal: ₹${subtotal}*\n*Delivery: ₹20*\n*Total: ₹${subtotal + 20}*`;
+
+  window.open(`https://wa.me/919894370660?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
+// ===== EVENT LISTENERS =====
 function setupEventListeners() {
-  document.getElementById('btn-en').addEventListener('click', () => {
-    currentLang = 'en';
-    document.getElementById('btn-en').classList.add('active');
-    document.getElementById('btn-ta').classList.remove('active');
-    renderLanguage();
+  // Theme & Lang Toggles
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    applyTheme(currentTheme);
   });
 
-  document.getElementById('btn-ta').addEventListener('click', () => {
-    currentLang = 'ta';
-    document.getElementById('btn-ta').classList.add('active');
-    document.getElementById('btn-en').classList.remove('active');
-    renderLanguage();
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'ta' : 'en';
+    setLanguage(currentLang);
   });
 
-  document.getElementById('theme-btn').addEventListener('click', toggleTheme);
+  // Mascot interactions
+  document.querySelectorAll('.actionable-chef').forEach(chef => {
+    chef.addEventListener('click', () => {
+      const container = chef.closest('.mascot-container');
+      container.classList.toggle('show-bubble');
+      if(container.classList.contains('show-bubble')) {
+        setTimeout(() => container.classList.remove('show-bubble'), 3000);
+      }
+    });
+  });
 
-  document.getElementById('menu-items').addEventListener('click', (e) => {
-    if (e.target.classList.contains('add-to-cart')) {
-      addToCart(e.target.dataset.id);
+  // Review Submit
+  document.getElementById('btn-submit-review').addEventListener('click', () => {
+    const name = document.getElementById('rev-name').value;
+    const rating = parseInt(document.getElementById('rev-rating').value);
+    const comment = document.getElementById('rev-comment').value;
+    if (name && comment) {
+      reviews.unshift({ name, rating, comment });
+      renderReviews();
+      document.getElementById('rev-name').value = '';
+      document.getElementById('rev-comment').value = '';
+      alert('Thank you for your review!');
+    } else {
+      alert('Please enter name and comment');
     }
   });
-
-  document.getElementById('cart-items').addEventListener('click', (e) => {
-    if (e.target.classList.contains('add-item')) {
-      addToCart(e.target.dataset.id);
-    }
-    if (e.target.classList.contains('remove-item')) {
-      removeFromCart(e.target.dataset.id);
-    }
+  // Category tabs
+  document.getElementById('category-tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.cat-tab');
+    if (!tab) return;
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeCategory = tab.dataset.cat;
+    renderMenu();
   });
 
-  document.getElementById('cart-toggle').addEventListener('click', showCart);
-  document.getElementById('close-cart').addEventListener('click', hideCart);
+  // Menu card click -> detail
+  document.getElementById('menu-grid').addEventListener('click', e => {
+    const card = e.target.closest('.menu-card');
+    if (!card) return;
+    if (e.target.closest('.card-fav')) {
+      e.target.closest('.card-fav').classList.toggle('liked');
+      e.target.closest('.card-fav').textContent = e.target.closest('.card-fav').classList.contains('liked') ? '♥' : '♡';
+      return;
+    }
+    showDetail(card.dataset.id);
+  });
+
+  // Explore button
+  document.getElementById('btn-explore').addEventListener('click', () => {
+    document.querySelector('.menu-section').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Back button
+  document.getElementById('btn-back').addEventListener('click', () => showView('home'));
+
+  // Cart toggles
+  document.getElementById('cart-toggle').addEventListener('click', openCart);
+  const detailCartBtn = document.getElementById('cart-toggle-detail');
+  if (detailCartBtn) detailCartBtn.addEventListener('click', openCart);
+  document.getElementById('close-cart').addEventListener('click', closeCart);
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+
+  // Cart item actions
+  document.getElementById('cart-items').addEventListener('click', e => {
+    if (e.target.classList.contains('cart-plus')) addToCart(e.target.dataset.id);
+    if (e.target.classList.contains('cart-minus')) removeFromCart(e.target.dataset.id);
+  });
+
+  // Checkout
   document.getElementById('btn-checkout').addEventListener('click', sendWhatsApp);
-  document.getElementById('btn-submit-fb').addEventListener('click', submitFeedback);
+
+  // Bottom nav
+  document.querySelectorAll('.nav-btn[data-view]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (btn.dataset.view === 'menu') {
+        document.querySelector('.menu-section').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        showView(btn.dataset.view);
+      }
+    });
+  });
+
+  // WhatsApp nav
+  const navWa = document.getElementById('nav-wa');
+  if (navWa) navWa.addEventListener('click', () => {
+    window.open('https://wa.me/919894370660?text=Hello!%20I%20have%20a%20question.', '_blank');
+  });
+
+  // Call nav
+  const navCall = document.getElementById('nav-call');
+  if (navCall) navCall.addEventListener('click', () => {
+    window.location.href = 'tel:+919894370660';
+  });
 }
 
+// ===== START =====
 init();
+renderCart();

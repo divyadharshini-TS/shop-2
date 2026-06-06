@@ -1,202 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramesh's Poli and Sweets | Authentic & Fresh Since 2005</title>
-
-  <!-- Google Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Ramesh's Poli & Sweets | Order Online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap"
-    rel="stylesheet">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description"
-    content="Order hot and fresh Paruppu Poli, Coconut Poli, Kara Poli, and Paal Bun from Ramesh's Poli and Sweets. Authentic taste since 2005. Evening specials available!">
-  <meta name="keywords"
-    content="Ramesh Poli, Sweet Poli, Kara Poli, Paal Bun, Ramesh Sweets, Tamil Sweets, Online Order Poli">
-  <meta name="author" content="Ramesh's Poli and Sweets">
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Order hot and fresh Paruppu Poli, Coconut Poli, Kara Poli, and Paal Bun from Ramesh's Poli and Sweets. Since 2005.">
+  <meta name="theme-color" content="#E65100">
   <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-  <div class="custom-cursor"></div>
-  <div class="custom-cursor-follower"></div>
   <div id="app">
-    <!-- Top Bar Actions -->
-    <div class="top-actions">
-      <div class="theme-toggle">
-        <button id="theme-btn" title="Toggle Theme">🌙</button>
-      </div>
-        <div class="lang-toggle">
-          <button id="btn-en" class="lang-btn active">English</button>
-          <button id="btn-ta" class="lang-btn">தமிழ்</button>
+
+    <div id="view-home" class="view active">
+      <header class="app-bar">
+        <h1 class="logo" data-i18n="logo">Ramesh's <span>Poli</span></h1>
+        <div class="app-bar-actions" style="display:flex;gap:8px;">
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
+          <button id="lang-toggle" class="icon-btn" title="Toggle Language">🌐</button>
+          <button id="cart-toggle" class="icon-btn cart-btn">
+            🛒 <span id="cart-count" class="badge-count">0</span>
+          </button>
         </div>
-        <div class="top-contact">
-          <a href="tel:+919894370660" class="top-phone">📞 Contact Us</a>
+      </header>
+
+      <!-- Hero Banner -->
+      <section class="hero-banner reveal">
+        <div class="hero-particles">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span>
         </div>
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h2 data-i18n="hero_title">Authentic Taste,<br>Served Hot Since <span class="highlight">2005</span></h2>
+            <p data-i18n="hero_subtitle">Freshly made every evening — order now!</p>
+            <button class="btn-primary" id="btn-explore" data-i18n="explore_menu">Explore Menu</button>
+          </div>
+          <div class="hero-mascot-wrap">
+            <div class="mascot-container hero-mascot">
+              <img src="/images/mini_chef.png" class="mini-chef hero-chef actionable-chef" alt="Chef Mascot">
+              <div class="speech-bubble" data-i18n="chef_msg1">Click me!</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Offer Strip -->
+      <div class="offer-strip">
+        🔥 Buy above ₹150 and get one Paal Bun or Poli <strong>FREE!</strong>
       </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="container">
-        <div class="hero-content animate-fade-in">
-          <h1 class="bilingual-title">
-            <span id="hero-title">Ramesh's Poli & Sweets</span>
-            <span class="ta-title">ரமேஷ்'ஸ் அசல் போலி & இனிப்புகள்</span>
-          </h1>
-          <p id="hero-subtitle">Authentic Taste, Served Hot Since 2005</p>
-          <div class="hero-badges">
-            <span class="badge floating" id="badge-fresh">Freshly Made Daily</span>
-            <span class="badge floating" style="animation-delay: 1.5s;" id="badge-hot">Hot & Soft Served</span>
+      <!-- Categories -->
+      <section class="section categories-section reveal">
+        <h3 class="section-title" data-i18n="categories">Categories</h3>
+        <div class="category-tabs" id="category-tabs">
+          <button class="cat-tab active" data-cat="all" data-i18n="cat_all">All</button>
+          <button class="cat-tab" data-cat="poli" data-i18n="cat_poli">Poli</button>
+          <button class="cat-tab" data-cat="kara" data-i18n="cat_kara">Kara</button>
+          <button class="cat-tab" data-cat="bun" data-i18n="cat_bun">Bun</button>
+        </div>
+      </section>
+
+      <!-- Menu Grid -->
+      <section class="section menu-section reveal">
+        <div class="menu-grid" id="menu-grid">
+          <!-- JS injects items -->
+        </div>
+      </section>
+
+      <!-- Delivery Info -->
+      <section class="section reveal">
+        <div class="info-card">
+          <h4 data-i18n="delivery_info">🛵 Delivery Info</h4>
+          <p data-i18n="delivery_desc">Min ₹60 | 1km: ₹20 | +₹20 per extra km</p>
+          <p class="subtext" data-i18n="delivery_time">Available 6:00 PM – 9:45 PM</p>
+        </div>
+      </section>
+
+      <!-- Bulk Orders -->
+      <section class="section reveal">
+        <div class="info-card accent-card shine-effect">
+          <div class="mascot-container bulk-mascot">
+            <img src="/images/mini_chef.png" class="mini-chef bulk-chef actionable-chef" alt="Chef Mascot">
+            <div class="speech-bubble" data-i18n="chef_msg2">Party Time!</div>
           </div>
-          <div class="hero-actions">
-            <a href="#menu" class="btn-primary" id="btn-order-now">Order Now</a>
+          <h4 data-i18n="bulk_orders">🎉 Bulk Orders & Functions</h4>
+          <p data-i18n="bulk_desc">Pre-book for parties & occasions!</p>
+          <a href="https://wa.me/919894370660?text=I%20want%20to%20enquire%20about%20bulk%20orders"
+             class="btn-primary small" target="_blank" data-i18n="enquire_wa">Enquire on WhatsApp</a>
+        </div>
+      </section>
+
+      <!-- Our Kutty Story -->
+      <section class="section reveal" id="kutty-story">
+        <div class="story-card">
+          <img src="/images/hero.png" alt="Ramesh's Poli Story" class="story-img">
+          <div class="story-content">
+            <h3 data-i18n="story_title">Our Kutty Story</h3>
+            <p data-i18n="story_p1">Started in 2005 as a small pushcart in Nanganallur, Ramesh's Poli has grown through sheer love and word-of-mouth. Our mission has always been simple: serve hot, fresh, and hygienic traditional snacks.</p>
+            <p data-i18n="story_p2">Every evening, the aroma of roasting ghee and jaggery brings our neighborhood together. Thank you for being part of our journey for nearly two decades!</p>
           </div>
         </div>
-      </div>
-    </header>
+      </section>
 
-    <!-- Offers Banner -->
-    <div id="offers-banner" class="animate-fade-in">
-      <div class="container">
-        <span id="offer-text">🔥 Offer: Buy above ₹150 and get one Paal Bun or Poli FREE!</span>
+      <!-- Reviews -->
+      <section class="section reveal">
+        <h3 class="section-title" data-i18n="reviews_title">Customer Reviews</h3>
+        
+        <div class="review-form-card">
+          <h4 data-i18n="write_review">Write a Review</h4>
+          <div class="review-inputs">
+            <input type="text" id="rev-name" placeholder="Your Name" required>
+            <select id="rev-rating">
+              <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+              <option value="4">⭐⭐⭐⭐ (4/5)</option>
+              <option value="3">⭐⭐⭐ (3/5)</option>
+              <option value="2">⭐⭐ (2/5)</option>
+              <option value="1">⭐ (1/5)</option>
+            </select>
+            <textarea id="rev-comment" placeholder="Share your experience..." required></textarea>
+          </div>
+          <button class="btn-primary" id="btn-submit-review" data-i18n="submit_review">Submit Review</button>
+        </div>
+
+        <div class="reviews-scroll" id="reviews-list">
+          <!-- JS injects reviews -->
+        </div>
+      </section>
+
+      <div class="spacer"></div>
+
+      <!-- Bottom Nav -->
+      <nav class="bottom-nav">
+        <button class="nav-btn active" data-view="home">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Home</span>
+        </button>
+        <button class="nav-btn" data-view="menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+          <span>Menu</span>
+        </button>
+        <button class="nav-btn" id="nav-wa">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          <span>Chat</span>
+        </button>
+        <button class="nav-btn" id="nav-call">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Call</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- ========== DETAIL VIEW ========== -->
+    <div id="view-detail" class="view">
+      <header class="detail-bar">
+        <button class="icon-btn" id="btn-back">←</button>
+        <button class="icon-btn cart-btn" id="cart-toggle-detail">
+          🛒 <span id="cart-count-detail" class="badge-count">0</span>
+        </button>
+      </header>
+      <div id="detail-content">
+        <!-- JS fills detail -->
       </div>
     </div>
 
-    <!-- Main Content -->
-    <main>
-      <!-- Our Story Section -->
-      <section id="our-story" class="container reveal">
-        <div class="glass story-card">
-          <div class="story-content">
-            <h2 class="bilingual-title">
-              <span id="story-title">Our Kutty Story</span>
-              <span class="ta-title">எங்கள் கதை</span>
-            </h2>
-            <h3 id="story-subtitle">Authentic Taste Since 2005</h3>
-            <p id="story-desc">
-              Ramesh's Poli & Sweets started with a simple mission: to serve the most authentic, home-style Polis to our community. For over 18 years, we have been using traditional recipes and the finest ingredients to bring you the taste of home, served hot and fresh every single day.
-            </p>
-            <div class="story-contact">
-              <a href="tel:+919894370660" class="btn-secondary">📞 Call to Order</a>
-            </div>
-          </div>
-          <div class="story-images">
-            <div class="story-image-wrapper">
-              <img src="/clean_poli_preparation.png" alt="Clean Traditional Preparation">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Menu Section -->
-      <section id="menu" class="container">
-        <h2 id="menu-title">Evening Specials</h2>
-        <p id="menu-time">Available 6:00 PM - 9:45 PM</p>
-
-        <div class="menu-grid" id="menu-items">
-          <!-- Items will be injected by JavaScript -->
-        </div>
-
-        <!-- Delivery Info -->
-        <div id="delivery-info" class="glass reveal">
-          <h4 id="delivery-title">Delivery Conditions</h4>
-          <p id="delivery-desc">Min Order: ₹60 | Nearby 1km: ₹20 charge | ₹20 per extra km</p>
-        </div>
-      </section>
-
-      <!-- Bulk Orders Section -->
-      <section id="bulk-orders" class="container">
-        <div class="glass bulk-card reveal">
-          <h2 id="bulk-title">Bulk Orders & Functions</h2>
-          <p id="bulk-desc">Pre-book for functions, parties, and special occasions. Contact us for special pricing!</p>
-          <a href="https://wa.me/919894370660?text=I%20want%20to%20enquire%20about%20bulk%20orders" class="btn-primary"
-            id="btn-bulk-enquiry">Enquire via WhatsApp</a>
-        </div>
-      </section>
-
-      <!-- Feedback & Reviews Section -->
-      <section id="feedback" class="container">
-        <h2 id="reviews-title">Customer Reviews</h2>
-        <div class="reviews-container">
-          <div id="reviews-list" class="reviews-grid">
-            <!-- Reviews will be injected by JS -->
-          </div>
-        </div>
-
-        <div class="feedback-form glass reveal">
-          <h3 id="feedback-title">Share Your Experience</h3>
-          <input type="text" id="fb-name" placeholder="Your Name">
-          <textarea id="fb-comment" placeholder="Your Feedback"></textarea>
-          <div class="rating-input">
-            <span id="rating-label">Rating:</span>
-            <select id="fb-rating">
-              <option value="5">⭐⭐⭐⭐⭐</option>
-              <option value="4">⭐⭐⭐⭐</option>
-              <option value="3">⭐⭐⭐</option>
-              <option value="2">⭐⭐</option>
-              <option value="1">⭐</option>
-            </select>
-          </div>
-          <button id="btn-submit-fb" class="btn-primary">Submit Review</button>
-        </div>
-      </section>
-
-
-    </main>
-
-    <!-- Floating Cart -->
-    <div id="cart-drawer" class="glass">
+    <!-- ========== CART DRAWER ========== -->
+    <div id="cart-overlay" class="overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
       <div class="cart-header">
-        <h3 id="cart-title">Your Order</h3>
-        <button id="close-cart">&times;</button>
+        <h3>Your Order</h3>
+        <button id="close-cart" class="icon-btn">✕</button>
       </div>
-      <div id="cart-items"></div>
-
-      <div class="checkout-form-mini">
-        <h4 id="checkout-details-title">Delivery Details</h4>
-        <input type="text" id="cust-name" placeholder="Full Name" required>
-        <input type="tel" id="cust-phone" placeholder="Phone Number" required>
-        <textarea id="cust-address" placeholder="Delivery Address" required></textarea>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="checkout-form">
+        <h4>Delivery Details</h4>
+        <div class="input-group">
+          <input type="text" id="cust-name" placeholder="Full Name">
+          <span class="error-msg" id="err-name" data-i18n="err_req">Required field</span>
+        </div>
+        <div class="input-group">
+          <input type="tel" id="cust-phone" placeholder="Phone Number">
+          <span class="error-msg" id="err-phone" data-i18n="err_req">Required field</span>
+        </div>
+        <div class="input-group">
+          <textarea id="cust-address" placeholder="Delivery Address"></textarea>
+          <span class="error-msg" id="err-address" data-i18n="err_req">Required field</span>
+        </div>
       </div>
       <div class="cart-footer">
-        <div class="cart-total">
-          <span id="total-label">Total:</span>
-          <span id="total-amount">₹0</span>
-        </div>
-        <div class="cart-actions-row">
-          <button id="btn-checkout" class="btn-primary">Order via WhatsApp</button>
-          <a href="tel:+919894370660" id="btn-cart-call" class="btn-secondary">📞 Call</a>
-        </div>
+        <div class="cart-total"><span>Total:</span><span id="total-amount">₹0</span></div>
+        <button id="btn-checkout" class="btn-primary full">Order via WhatsApp</button>
+        <a href="tel:+919894370660" class="btn-outline full">📞 Call to Order</a>
       </div>
     </div>
 
-    <!-- Floating WhatsApp Chat -->
-    <a href="https://wa.me/919894370660?text=Hello!%20I%20have%20a%20question%20about%20your%20sweets." 
-       class="whatsapp-float glass floating-gentle" target="_blank" title="Chat with us">
-      <span class="whatsapp-icon">💬</span>
-    </a>
-
-    <!-- Floating Cart Toggle -->
-    <button id="cart-toggle" class="glass">
-      <span class="cart-icon">🛒</span>
-      <span id="cart-count">0</span>
-    </button>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p id="footer-text">&copy; 2024 Ramesh's Poli & Sweets. All rights reserved.</p>
-      </div>
-    </footer>
   </div>
   <script type="module" src="/main.js"></script>
 </body>
-
 </html>
